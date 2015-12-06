@@ -1,3 +1,7 @@
+# General
+*~
+
+# LateX
 *.aux
 *.glo
 *.idx
@@ -21,5 +25,16 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.ps
 
-*~
+# Apple
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# TexPad
+xcuserdata/
+project.xcworkspace/
+build/
+*.swp
+.texpadtmp/
