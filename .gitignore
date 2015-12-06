@@ -1,6 +1,10 @@
 # General
 *~
 
+# Output
+*.pdf
+*.ps
+
 # LateX
 *.aux
 *.glo
@@ -25,7 +29,6 @@
 *.mtc1
 *.out
 *.synctex.gz
-*.ps
 
 # Apple
 .DS_Store
