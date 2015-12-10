@@ -5,30 +5,34 @@
 *.pdf
 *.ps
 
+# Atom
+*.fdb_latexmk
+*.fls
+
 # LateX
-*.aux
-*.glo
-*.idx
-*.log
-*.toc
-*.ist
 *.acn
 *.acr
 *.alg
+*.aux
 *.bbl
 *.blg
 *.dvi
 *.glg
+*.glo
 *.gls
+*.idx
 *.ilg
 *.ind
+*.ist
 *.lof
+*.log
 *.lot
 *.maf
 *.mtc
 *.mtc1
 *.out
 *.synctex.gz
+*.toc
 
 # Apple
 .DS_Store
