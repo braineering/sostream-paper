@@ -9,9 +9,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Authors
-Author One - <[firstname.lastname@alumni.uniroma2.eu](mailto:firstname.lastname@alumni.uniroma2.eu)>
-AuthorTwo - <[firstname.lastname@alumni.uniroma2.eu](mailto:firstname.lastname@alumni.uniroma2.eu)>
-AuthorThree - <[firstname.lastname@alumni.uniroma2.eu](mailto:firstname.lastname@alumni.uniroma2.eu)>
+Giacomo Marciani - <[giacomo.marciani@alumni.uniroma2.eu](mailto:giacomo.marciani@alumni.uniroma2.eu)>
+
+Marco Piu - <[marco.piu@alumni.uniroma2.eu](mailto:marco.piu@alumni.uniroma2.eu)>
+
+Michele Porretta - <[michele.porretta@alumni.uniroma2.eu](mailto:michele.porretta@alumni.uniroma2.eu)>
 
 ## Copyright
 Copyright (c) <year> <copyright holders>
