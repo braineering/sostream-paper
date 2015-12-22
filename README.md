@@ -14,35 +14,13 @@ The data for the DEBS 2016 Grand Challenge is based on the dataset provided toge
 ### Input Data Streams
 The input data is organized in four separate streams, each provided as a text file. Namely, we provide the following input data files:
 
->friendships.dat: (ts, user_id_1, user_id_2)
+* **fiendship.dat**: (ts, user_id_1, user_id_2), where *ts* is the friendship's establishment timestamp, *user_id_1* is the id of one of the users, *user_id_2* is the id of the other user.
 
-ts 	is the friendship's establishment timestamp
-user_id_1 	is the id of one of the users
-user_id_2 	is the id of the other user
+* **posts.dat**: (ts, post_id, user_id, post, user), where *ts* is the post's timestamp, *post_id* is the unique id of the post, *user_id* is the unique id of the user, *post* is a string containing the actual post content, *user* is a string containing the actual user name.
 
->posts.dat: (ts, post_id, user_id, post, user)
+* **comments.dat**: (ts, comment_id, user_id, comment, user, comment_replied, post_commented2), where *ts* is the comment's timestamp, *comment_id* is the unique id of the comment, *user_id* is the unique id of the user, *comment* is a string containing the actual comment, *user* is a string containing the actual user name, *comment_replied* is the id of the comment being replied to (-1 if the tuple is a reply to a post), *post_commented* is the id of the post being commented (-1 if the tuple is a reply to a comment).
 
-ts 	is the post's timestamp
-post_id 	is the unique id of the post
-user_id 	is the unique id of the user
-post 	is a string containing the actual post content
-user 	is a string containing the actual user name
-
->comments.dat: (ts, comment_id, user_id, comment, user, comment_replied, post_commented2)
-
-ts 	is the comment's timestamp
-comment_id 	is the unique id of the comment
-user_id 	is the unique id of the user
-comment 	is a string containing the actual comment
-user 	is a string containing the actual user name
-comment_replied 	is the id of the comment being replied to (-1 if the tuple is a reply to a post)
-post_commented 	is the id of the post being commented (-1 if the tuple is a reply to a comment)
-
->likes.dat: (ts, user_id, comment_id)
-
-ts 	is the like's timestamp
-user_id 	is the id of the user liking the comment
-comment_id 	is the id of the comment
+* **likes.dat**: (ts, user_id, comment_id), where *ts* is the like's timestamp, *user_id* is the id of the user liking the comment, *comment_id* is the id of the comment.
 
 Please note that as the contents of files represent data streams, each file is sorted based on its respective timestamp field.
 
@@ -56,7 +34,6 @@ The total score of an active post P is computed as the sum of its own score plus
 Each new post has an initial own score of 10 which decreases by 1 each time another 24 hours elapse since the post's creation. Each new comment's score is also initially set to 10 and decreases by 1 in the same way (every 24 hours since the comment's creation). Both post and comment scores are non-negative numbers, that is, they cannot drop below zero. A post is considered no longer active (that is, no longer part of the present and future analysis) as soon as its total score reaches zero, even if it receives additional comments in the future.
 
 #### Output specification
-
 (ts,top1_post_id,top1_post_user,top1_post_score,top1_post_commenters,
 top2_post_id,top2_post_user,top2_post_score,top2_post_commenters,
 top3_post_id,top3_post_user,top3_post_score,top3_post_commenters)
