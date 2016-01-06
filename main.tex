@@ -3,18 +3,14 @@
 %
 % Style: SIG Proceedings Alternate VERSION 2.8
 
+% You can indicate italicized words or phrases in your text with the command \texttt{{\char'134}textit}; emboldening with the command \texttt{{\char'134}textbf} and typewriter-style (for instance, for computer code) with \texttt{{\char'134}texttt}.
+
 \documentclass{sig-alternate-05-2015}
 
 \begin{document}
 
 % COPYRIGHT
 \setcopyright{acmcopyright}
-%\setcopyright{acmlicensed}
-%\setcopyright{rightsretained}
-%\setcopyright{usgov}
-%\setcopyright{usgovmixed}
-%\setcopyright{cagov}
-%\setcopyright{cagovmixed}
 
 % DOI
 \doi{10.475/123_4}
@@ -34,66 +30,38 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 
 % TITLE
-\title{The title goes here\titlenote{(Produces the permission block, and copyright information). For use with SIG-ALTERNATE.CLS. Supported by ACM.}}
-\subtitle{[Extended Abstract]
-\titlenote{A full version of this paper is available as
-\textit{Author's Guide to Preparing ACM SIG Proceedings Using
-\LaTeX$2_\epsilon$\ and BibTeX} at
-\texttt{www.acm.org/eaddress.htm}}}
+\title{DEBS Grand Challenge: a processing engine for real-time analytics on social graph}
 
 % AUTHORS
 \numberofauthors{3}
 \author{
 % 1st. author
 \alignauthor
-Mario Rossi\titlenote{Note about the 1st author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
+Giacomo Marciani\\
+\affaddr{University of Rome\\"Tor Vergata"}\\
 \affaddr{Rome, Italy}\\
-\email{mario.rossi@uniroma2.eu}
+\email{giacomo.marciani\\@alumni.uniroma2.eu}
 % 2nd. author
 \alignauthor
-Mario Bianchi\titlenote{Note about the 2nd author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
+Marco Piu\\
+\affaddr{University of Rome\\"Tor Vergata"}\\
 \affaddr{Rome, Italy}\\
-\email{mario.bianchi@uniroma2.eu}
+\email{marco.piu\\@alumni.uniroma2.eu}
 % 3rd. author
 \alignauthor
-Mario Verdi\titlenote{Note about the 3rd author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
+Michele Porretta\\
+\affaddr{University of Rome\\"Tor Vergata"}\\
 \affaddr{Rome, Italy}\\
-\email{mario.verdi@uniroma2.eu}
-\and
+\email{michele.porretta\\@alumni.uniroma2.eu}
+%\and
 % 4th. author
-\alignauthor
-Mario Rossi\titlenote{Note about the 4th author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
-\affaddr{Rome, Italy}\\
-\email{mario.rossi@uniroma2.eu}
-% 5th. author
-\alignauthor
-Mario Bianchi\titlenote{Note about the 5th author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
-\affaddr{Rome, Italy}\\
-\email{mario.bianchi@uniroma2.eu}
-% 6th. author
-\alignauthor
-Mario Verdi\titlenote{Note about the 6th author.}\\
-\affaddr{University of Rome Tor Vergata}\\
-\affaddr{Via del Politecico 1}\\
-\affaddr{Rome, Italy}\\
-\email{mario.verdi@uniroma2.eu}
 }
 
 \maketitle
 
 % ABSTRACT
 \begin{abstract}
-This is a test of Altassian's software: SourceTree for Mac OSx.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \end{abstract}
 
 % CATEGORIES
@@ -117,57 +85,37 @@ This is a test of Altassian's software: SourceTree for Mac OSx.
 
 % INTRODUCTION
 \section{Introduction}
-The \textit{proceedings} are the records of a conference. ACM seeks to give these conference by-products a uniform, high-quality appearance.  To do this, ACM has some rigid requirements for the format of the proceedings documents: there is a specified format (balanced  double columns), a specified set of fonts (Arial or Helvetica and Times Roman) in certain specified sizes (for instance, 9 point for body copy), a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom and (1.9 cm [.75"]) left and right; specified column width (8.45 cm [3.33"]) and gutter size (.83 cm [.33"]). The good news is, with only a handful of manual settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}} and {\texttt{\char'134 alignauthor}} commands, you have already used; another, {\texttt{\char'134 balancecolumns}}, will be used in your very last run of \LaTeX\ to ensure balanced column heights on the last page.}, the \LaTeX\ document class file handles all of this for you.
-The remainder of this document is concerned with showing, in the context of an ``actual'' document, the \LaTeX\ commands specifically available for denoting the structure of a proceedings paper, rather than with giving rigorous descriptions or explanations of such commands.
+Lorem ipsum dolor sit amet \cite{bowman:reasoning,braams:babel,clark:pct}, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\section{The {\secit Body} of The Paper}
-Typically, the body of a paper is organized into a hierarchical structure, with numbered or unnumbered headings for sections, subsections, sub-subsections, and even smaller sections.  The command \texttt{{\char'134}section} that precedes this paragraph is part of such a hierarchy.\footnote{This is the second footnote.  It starts a series of three footnotes that add nothing informational, but just give an idea of how footnotes work and look. It is a wordy one, just so you see how a longish one plays out.} \LaTeX\ handles the numbering and placement of these headings for you, when you use the appropriate heading commands around the titles of the headings.  If you want a sub-subsection or smaller part to be unnumbered in your output, simply append an asterisk to the command name.  Examples of both numbered and unnumbered headings will appear throughout the balance of this sample document.
-Because the entire article is contained in the \textbf{document} environment, you can indicate the start of a new paragraph with a blank line in your input file; that is why this sentence forms a separate paragraph.
+\section{Solution}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
-We have already seen several typeface changes in this sample. You can indicate italicized words or phrases in your text with the command \texttt{{\char'134}textit}; emboldening with the command \texttt{{\char'134}textbf} and typewriter-style (for instance, for computer code) with \texttt{{\char'134}texttt}.  But remember, you do not have to indicate typestyle changes when such changes are part of the \textit{structural} elements of your article; for instance, the heading of this subsection will be in a sans serif\footnote{A third footnote, here. Let's make this a rather short one to see how it looks.} typeface, but that is handled by the document class file. Take care with the use of\footnote{A fourth, and last, footnote.}  the curly braces in typeface changes; they mark the beginning and end of the text that is to be in the different typeface.
-You can use whatever symbols, accented characters, or non-English characters you need anywhere in your document; you can find a complete list of what is available in the \textit{\LaTeX\ User's Guide}\cite{Lamport:LaTeX}.
+\begin{figure}
+	\centering
+	\includegraphics[height=1in, width=1in]{figures/fly}
+	\caption{The topology.}
+\end{figure}
 
-\subsection{Math Equations}
-You may want to display math equations in three distinct styles: inline, numbered or non-numbered display.  Each of the three are discussed in the next sections.
+\subsection{Query 1}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsubsection{Inline (In-text) Equations}
-A formula that appears in the running text is called an inline or in-text formula. It is produced by the \textbf{math} environment, which can be invoked with the usual \texttt{{\char'134}begin. . .{\char'134}end} construction or with the short form \texttt{\$. . .\$}. You can use any of the symbols and structures, from $\alpha$ to $\omega$, available in \LaTeX\cite{Lamport:LaTeX}; this section will simply show a few examples of in-text equations in context. Notice how this equation:
+\begin{figure}
+	\centering
+	\includegraphics[height=1in, width=1in]{figures/fly}
+	\caption{The topology for query 1.}
+\end{figure}
 
-\begin{math}
-	\lim_{n\rightarrow \infty}x=0
-\end{math}
+\subsection{Query 2}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-, set here in in-line math style, looks slightly different when set in display style.  (See next section).
+\begin{figure}
+	\centering
+	\includegraphics[height=1in, width=1in]{figures/fly}
+	\caption{The topology for query 2.}
+\end{figure}
 
-\subsubsection{Display Equations}
-A numbered display equation -- one set off by vertical space from the text and centered horizontally -- is produced by the \textbf{equation} environment. An unnumbered display equation is produced by the \textbf{displaymath} environment. Again, in either environment, you can use any of the symbols and structures available in \LaTeX; this section will just give a couple of examples of display equations in context. First, consider the equation, shown as an inline equation above:
-
-\begin{equation}
-	\lim_{n\rightarrow \infty}x=0
-\end{equation}
-
-Notice how it is formatted somewhat differently in the \textbf{displaymath} environment.  Now, we'll enter an unnumbered equation:
-
-\begin{displaymath}
-	\sum_{i=0}^{\infty} x + 1
-\end{displaymath}
-
-and follow it with another numbered equation:
-
-\begin{equation}
-	\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
-\end{equation}
-
-just to demonstrate \LaTeX's able handling of numbering.
-
-\subsection{Citations}
-Citations to articles \cite{bowman:reasoning, clark:pct, braams:babel, herlihy:methodology}, conference proceedings \cite{clark:pct} or books \cite{salas:calculus, Lamport:LaTeX} listed in the Bibliography section of your article will occur throughout the text of your article. You should use BibTeX to automatically produce this bibliography; you simply need to insert one of several citation commands with a key of the item cited in the proper location in the \texttt{.tex} file \cite{Lamport:LaTeX}. The key is a short reference you invent to uniquely identify each work; in this sample document, the key is the first author's surname and a word from the title.  This identifying key is included with each item in the \texttt{.bib} file for your article.
-The details of the construction of the \texttt{.bib} file are beyond the scope of this sample document, but more information can be found in the \textit{Author's Guide}, and exhaustive details in the \textit{\LaTeX\ User's Guide}\cite{Lamport:LaTeX}. This article shows only the plainest form of the citation command, using \texttt{{\char'134}cite}. This is what is stipulated in the SIGS style specifications. No other citation format is endorsed or supported.
-
-\subsection{Tables}
-Because tables cannot be split across pages, the best placement for them is typically the top of the page nearest their initial cite.  To ensure this proper ``floating'' placement of tables, use the environment \textbf{table} to enclose the table's contents and the table caption.  The contents of the table itself must go in the \textbf{tabular} environment, to be aligned properly in rows and columns, with the desired horizontal and vertical rules.  Again, detailed instructions on \textbf{tabular} material is found in the \textit{\LaTeX\ User's Guide}.
-Immediately following this sentence is the point at which  Table 1 is included in the input file; compare the placement of the table here with the table in the printed dvi output of this document.
+\section{Evaluation}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \begin{table}
 	\centering
@@ -183,54 +131,38 @@ Immediately following this sentence is the point at which  Table 1 is included i
 	\end{tabular}
 \end{table}
 
-To set a wider table, which takes up the whole width of the page's live area, use the environment \textbf{table*} to enclose the table's contents and the table caption.  As with a single-column table, this wide table will ``float" to a location deemed more desirable. Immediately following this sentence is the point at which Table 2 is included in the input  file; again, it is instructive to compare the placement of the table here with the table in the printed dvi output of this document.
+\subsection{Query 1}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{table*}
-	\centering
-	\caption{Some Typical Commands}
-	\begin{tabular}{|c|c|l|}
-		\hline
-		Command&A Number&Comments\\ \hline
-		\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-		\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-		\texttt{{\char'134}table}& 300 & For tables\\ \hline
-		\texttt{{\char'134}table*}& 400& For wider tables\\
-		\hline
-	\end{tabular}
-\end{table*}
+\subsection{Query 2}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\subsection{Figures}
-Like tables, figures cannot be split across pages; the best placement for them is typically the top or the bottom of the page nearest their initial cite.  To ensure this proper ``floating'' placement of figures, use the environment \textbf{figure} to enclose the figure and its caption. This sample document contains examples of \textbf{.eps} files to be displayable with \LaTeX.  If you work with pdf\LaTeX, use files in the \textbf{.pdf} format.  Note that most modern \TeX\ system will convert \textbf{.eps} to \textbf{.pdf} for you on the fly.  More details on each of these is found in the \textit{Author's Guide}.
+\section{Conclusions}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{figure}
-	\centering
-	\includegraphics{figures/fly}
-	\caption{A sample black and white graphic.}
-\end{figure}
+\section{Acknowledgments}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\begin{figure}
-	\centering
-	\includegraphics[height=1in, width=1in]{figures/fly}
-	\caption{A sample black and white graphic
-	that has been resized with the \texttt{includegraphics} command.}
-\end{figure}
+\section{Formatting examples}
 
-As was the case with tables, you may want a figure that spans two columns.  To do this, and still to ensure proper ``floating'' placement of tables, use the environment \textbf{figure*} to enclose the figure and its caption. and don't forget to end the environment with {figure*}, not {figure}!
+\subsection{Math}
+This is an inline equation
 
-\begin{figure*}
-	\centering
-	\includegraphics{figures/flies}
-	\caption{A sample black and white graphic
-	that needs to span two columns of text.}
-\end{figure*}
+\begin{math}
+	\lim_{n\rightarrow \infty}x=0
+\end{math}
 
-\begin{figure}
-	\centering
-	\includegraphics[height=1in, width=1in]{figures/rosette}
-	\caption{A sample black and white graphic that has
-	been resized with the \texttt{includegraphics} command.}
-	\vskip -6pt
-\end{figure}
+This is a display numbered equation
+
+\begin{equation}
+	\lim_{n\rightarrow \infty}x=0
+\end{equation}
+
+This is a display unnumbered equation:
+
+\begin{displaymath}
+	\sum_{i=0}^{\infty} x + 1
+\end{displaymath}
 
 \subsection{Theorem-like Constructs}
 Other common constructs that may occur in your article are the forms for logical constructs like theorems, axioms, corollaries and proofs.  There are two forms, one produced by the command \texttt{{\char'134}newtheorem} and the other by the command \texttt{{\char'134}newdef}; perhaps the clearest and easiest way to distinguish them is to compare the two in the output of this sample document: This uses the \textbf{theorem} environment, created by the\linebreak\texttt{{\char'134}newtheorem} command:
@@ -268,18 +200,6 @@ Two lists of constructs that use one of these forms is given in the \textit{Auth
 	which contradicts our assumption that $l\neq 0$.
 \end{proof}
 
-Complete rules about using these environments and using the two different creation commands are in the \textit{Author's Guide}; please consult it for more detailed instructions.  If you need to use another construct, not listed therein, which you want to have the same formatting as the Theorem or the Definition\cite{salas:calculus} shown above, use the \texttt{{\char'134}newtheorem} or the \texttt{{\char'134}newdef} command, respectively, to create it.
-
-\subsection*{A {\secit Caveat} for the \TeX\ Expert}
-Because you have just been given permission to use the \texttt{{\char'134}newdef} command to create a new form, you might think you can use \TeX's \texttt{{\char'134}def} to create a new command: \textit{Please refrain from doing this!} Remember that your \LaTeX\ source code is primarily intended to create camera-ready copy, but may be converted to other forms -- e.g. HTML. If you inadvertently omit some or all of the \texttt{{\char'134}def}s recompilation will be, to say the least, problematic.
-
-\section{Conclusions}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% ACKNOWLEDGMENTS
-\section{Acknowledgments}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 % REFERENCES
 %Generated by bibtex from your ~.bib file.  Run latex,
 %then bibtex, then latex twice (to resolve references)
@@ -290,16 +210,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \bibliographystyle{abbrv}
 \bibliography{references}
 
-% APPENDICIES
-\appendix
-%Appendix A
-\section{1st Appendix}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\subsection{Section}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-% Appendix B
-\section{2nd Appendix}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-%\balancecolumns % GM June 2007
 \end{document}
