@@ -1,8 +1,16 @@
-# ACM DEBS Grand Challenge 2016
-*The solution for ACM DEBS Grand Challenge 2016*
+# Real-time Analysis of Social Networks Leveraging the Flink Framework
+*ACM DEBS Grand Challenge 2016*
 - - -
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In this paper, we present a solution to the DEBS 2016 Grand Challenge that leverages Apache Flink, an open source platform for distributed stream and batch processing. The challenge focuses on the real-time analysis of an evolving social-network graph, to
+(1) determine the posts that trigger the current most activity, and
+(2) identify large communities that are currently involved in a topic.
+
+We design the system architecture focusing on the exploitation of parallelism and memory efficiency so to enable an effective processing of high volume data streams on a distributed infrastructure.
+
+Our solution to the first query relies on a distributed and fine-grain approach for updating the post scores and determining partial ranks, which are then merged into a single final rank. Furthermore, changes in the final rank are efficiently identified so to update the output only if needed.
+
+For the second query, we plan to exploit the benefits of concurrent batch and stream processing as envisioned by the lambda architecture as well as the support provided by the Flink graph processing API.
 
 ## Grand Challlenge Problem
 The ACM DEBS 2016 Grand Challenge is the sixth in a series of challenges which seek to provide a common ground and uniform evaluation criteria for a competition aimed at both research and industrial event-based systems. The goal of the 2016 DEBS Grand Challenge competition is to evaluate event-based systems for real-time analytics over high volume data streams in the context of graph models.
@@ -74,15 +82,6 @@ Sample output tuples for the query with k=3 could look as follows:
 2010-10-28T05:01:31.027+0000,I love strawberries,what a day!,well done
 2010-10-28T05:01:31.032+0000,what a day!,I love strawberries,well done
 
-## Grand Challlenge Solution
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-## Installation
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
 ## Usage
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -90,18 +89,19 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Authors
-Giacomo Marciani, [giacomo.marciani@gmail.com](mailto:giacomo.marciani@gmail.com)
+Giacomo Marciani [giacomo.marciani@gmail.com](mailto:giacomo.marciani@gmail.com)
 
-Marco Piu, [marco.piu@alumni.uniroma2.eu](mailto:marco.piu@alumni.uniroma2.eu)
+Marco Piu [pyumarco@gmail.com](mailto:pyumarco@gmail.com)
 
-Michele Porretta, [michele.porretta@alumni.uniroma2.eu](mailto:michele.porretta@alumni.uniroma2.eu)
+Michele Porretta [micheleporretta@gmail.com](mailto:micheleporretta@gmail.com)
 
-## Contributing
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Matteo Nardelli [nardelli@ing.uniroma2.it](mailto:nardelli@ing.uniroma2.it)
+
+Valeria Cardellini [cardellini@ing.uniroma2.it](mailto:cardellini@ing.uniroma2.it)
+
+## Institution
+Department of Civil Engineering and Computer Science Engineering, University of Rome Tor Vergata, Italy
 
 ## License
-SOFTWARE-NAME-GOES-HERE Paper is released under the [BSD License](https://opensource.org/licenses/BSD-3-Clause).
+The paper is released under the [BSD License](https://opensource.org/licenses/BSD-3-Clause).
 Please, read the file LICENSE.md for details.
