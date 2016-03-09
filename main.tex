@@ -1,5 +1,14 @@
-% ACM DEBS Grand Challenge 2016
-% Authors: author1, author2, author3, author4, author5, author6
+% Title: Real-time Analysis of Social Networks Leveraging the Flink Framework
+%
+% Conference: ACM DEBS 2016
+%
+% Authors: Giacomo Marciani <giacomo.marciani@gmail.com>, 
+% 		   Marco Piu <pyumarco@gmail.com>,
+%		   Michele Porretta <micheleporretta@gmail.com>,
+%		   Matteo Nardelli <nardelli@ing.uniroma2.it>,
+%		   Valeria Cardellini <cardellini@ing.uniroma2.it>
+%
+% Institution: Department of Civil Engineering and Computer Science Engineering, University of Rome Tor Vergata, Italy
 %
 % Style: SIG Proceedings Alternate VERSION 2.8
 
@@ -7,198 +16,169 @@
 
 \documentclass{sig-alternate-05-2015}
 
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[]{subfig}
+\usepackage{bm}
+
+%% XXX: --- cancellare questa sezione ---
+\usepackage[usenames,dvipsnames]{color}
+\newcommand{\hly}[1] {\colorbox{yellow}{#1}} 
+\newcommand{\hlyr}[1] {{\color{red}\hly{#1}}} 
+\newcommand{\hlr}[1] {\emph{{\color{red}#1}}} 
+\newcommand{\hlb}[1] {\emph{{\color{blue}#1}}} 
+%% XXX: FINE --- cancellare questa sezione ---
+
+% CUSTOM RULES
+
+\def\sharedaffiliation{%
+\end{tabular}
+\begin{tabular}{c}}
+
+\newfont{\eaddfntresz}{phvr8t at 11pt}
+
+\hyphenation{sched-uler par-a-digm adopt-ed}
+
 \begin{document}
 
 % COPYRIGHT
 \setcopyright{acmcopyright}
 
-% DOI
-\doi{10.475/123_4}
-
 % ISBN
-\isbn{123-4567-24-567/08/06}
+%\isbn{123-4567-24-567/08/06}
+
+% DOI
+%\doi{10.475/123_4}
 
 % CONFERENCE
-\conferenceinfo{DEBS '16}{June 20--24, 2016, Irvine, CA, USA}
+\conferenceinfo{DEBS 2016}{June 20--24, 2016, Irvine, CA, USA}
 
 % PRICE
 \acmPrice{\$15.00}
 
 % AUTHOR METADATA
-\conferenceinfo{DEBS}{'16 Irvine, California USA}
-\CopyrightYear{2016} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\conferenceinfo{DEBS 2016}{June 20--24, 2016, Irvine, CA, USA}
+%\CopyrightYear{2016} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 
 % TITLE
-\title{DEBS Grand Challenge: a processing engine for real-time analytics on social graph}
+\title{Real-time Analysis of Social Networks \\ Leveraging the Flink Framework}
 
 % AUTHORS
-\numberofauthors{3}
+\numberofauthors{5}
 \author{
-% 1st. author
 \alignauthor
-Giacomo Marciani\\
-\affaddr{University of Rome\\"Tor Vergata"}\\
-\affaddr{Rome, Italy}\\
-\email{giacomo.marciani\\@alumni.uniroma2.eu}
-% 2nd. author
+	Giacomo Marciani\\
+	\email{{\eaddfntresz giacomo.marciani@gmail.com}}  
 \alignauthor
-Marco Piu\\
-\affaddr{University of Rome\\"Tor Vergata"}\\
-\affaddr{Rome, Italy}\\
-\email{marco.piu\\@alumni.uniroma2.eu}
-% 3rd. author
+	Marco Piu\\
+	\email{pyumarco@gmail.com}   
 \alignauthor
-Michele Porretta\\
-\affaddr{University of Rome\\"Tor Vergata"}\\
-\affaddr{Rome, Italy}\\
-\email{michele.porretta\\@alumni.uniroma2.eu}
-%\and
-% 4th. author
+	Michele Porretta\\
+	\email{micheleporretta@gmail.com}        
+\and
+\alignauthor
+	Matteo Nardelli\\
+	\email{nardelli@ing.uniroma2.it}        
+\alignauthor
+	Valeria Cardellini\\
+	\email{cardellini@ing.uniroma2.it} 
+\sharedaffiliation
+	\affaddr{Department of Civil Engineering and Computer Science Engineering}  \\
+	\affaddr{University of Rome Tor Vergata, Italy} 
 }
 
 \maketitle
 
 % ABSTRACT
 \begin{abstract}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	In this paper, we present a solution to the DEBS 2016 Grand Challenge that leverages Apache Flink, an open source platform for distributed stream and batch processing. The challenge focuses on the real-time analysis of an evolving social-network graph, to 
+	(1) determine the posts that trigger the current most activity, and 
+	(2) identify large communities that are currently involved in a topic. 
+	
+	We design the system architecture focusing on the exploitation of parallelism and memory efficiency so to enable an effective processing of high volume data streams on a distributed infrastructure. 
+	%
+	Our solution to the first query relies on a distributed and fine-grain approach for updating the post scores and determining partial ranks, which are then merged into a single final rank. Furthermore, changes in the final rank are efficiently identified so to update the output only if needed. 
+	%
+	For the second query, we plan to exploit the benefits of concurrent batch and stream processing as envisioned by the lambda architecture as well as the support provided by the Flink graph processing API.
 \end{abstract}
 
 % CATEGORIES
 % Should be generated by the tool at http://dl.acm.org/ccs.cfm
-\begin{CCSXML}
-<ccs2012>
-	<concept>
-		<concept_id>10010147.10010919.10010172</concept_id>
-		<concept_desc>Computing methodologies~Distributed algorithms</concept_desc>
-		<concept_significance>500</concept_significance>
-	</concept>
-</ccs2012>
-\end{CCSXML}
-\ccsdesc[500]{Computing methodologies~Distributed algorithms}
+\input{ccs-keywords}
 
 %  Use this command to print the description
 \printccsdesc
 
 % KEYWORDS
-\keywords{ACM proceedings; Complex Event Processing; Event Stream Processing; Apache Storm; Amazon Web Services}
+%\keywords{ACM proceedings; Complex Event Processing; Event Stream Processing; Apache Storm; Amazon Web Services}
 
 % INTRODUCTION
 \section{Introduction}
-Lorem ipsum dolor sit amet \cite{bowman:reasoning,braams:babel,clark:pct}, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The DEBS 2016 Grand Challenge \cite{JerzakZiekow2014} focues on ...
+\\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Solution}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \begin{figure}
 	\centering
-	\includegraphics[height=1in, width=1in]{figures/fly}
+	\includegraphics[height=1in, width=1in]{img/fly}
 	\caption{The topology.}
 \end{figure}
 
 \subsection{Query 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\begin{figure}
-	\centering
-	\includegraphics[height=1in, width=1in]{figures/fly}
-	\caption{The topology for query 1.}
-\end{figure}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \subsection{Query 2}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\begin{figure}
-	\centering
-	\includegraphics[height=1in, width=1in]{figures/fly}
-	\caption{The topology for query 2.}
-\end{figure}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Evaluation}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\begin{table}
-	\centering
-	\caption{Title goes here}
-	\begin{tabular}{|c|c|l|}
-		\hline
-		Non-English or Math&Frequency&Comments\\ \hline
-		\O & 1 in 1,000& For Swedish names\\ \hline
-		$\pi$ & 1 in 5& Common in math\\ \hline
-		\$ & 4 in 5 & Used in business\\ \hline
-		$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-		\hline
-	\end{tabular}
-\end{table}
-
-\subsection{Query 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\subsection{Query 2}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Conclusions}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Acknowledgments}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\section{Formatting examples}
-
-\subsection{Math}
-This is an inline equation
-
-\begin{math}
-	\lim_{n\rightarrow \infty}x=0
-\end{math}
-
-This is a display numbered equation
-
-\begin{equation}
-	\lim_{n\rightarrow \infty}x=0
-\end{equation}
-
-This is a display unnumbered equation:
-
-\begin{displaymath}
-	\sum_{i=0}^{\infty} x + 1
-\end{displaymath}
-
-\subsection{Theorem-like Constructs}
-Other common constructs that may occur in your article are the forms for logical constructs like theorems, axioms, corollaries and proofs.  There are two forms, one produced by the command \texttt{{\char'134}newtheorem} and the other by the command \texttt{{\char'134}newdef}; perhaps the clearest and easiest way to distinguish them is to compare the two in the output of this sample document: This uses the \textbf{theorem} environment, created by the\linebreak\texttt{{\char'134}newtheorem} command:
-
-\newtheorem{theorem}{Theorem}
-\begin{theorem}
-	Let $f$ be continuous on $[a,b]$.  If $G$ is an antiderivative for $f$ on $[a,b]$, then
-	\begin{displaymath}
-		\int^b_af(t)dt = G(b) - G(a).
-	\end{displaymath}
-\end{theorem}
-
-The other uses the \textbf{definition} environment, created by the \texttt{{\char'134}newdef} command: \newdef{definition}{Definition}
-
-\begin{definition}
-	If $z$ is irrational, then by $e^z$ we mean the unique number which has logarithm $z$:
-	\begin{displaymath}{\log e^z = z}\end{displaymath}
-\end{definition}
-
-Two lists of constructs that use one of these forms is given in the \textit{Author's  Guidelines}. There is one other similar construct environment, which is already set up for you; i.e. you must \textit{not} use a \texttt{{\char'134}newdef} command to create it: the \textbf{proof} environment.  Here is a example of its use:
-
-\begin{proof}
-	Suppose on the contrary there exists a real number $L$ such that
-	\begin{displaymath}
-		\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-	\end{displaymath}
-	Then
-	\begin{displaymath}
-		l=\lim_{x\rightarrow c} f(x)
-		= \lim_{x\rightarrow c}
-		\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ]
-		= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-		\frac{f(x)}{g(x)} = 0\cdot L = 0,
-	\end{displaymath}
-	which contradicts our assumption that $l\neq 0$.
-\end{proof}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 % REFERENCES
 %Generated by bibtex from your ~.bib file.  Run latex,
@@ -208,6 +188,6 @@ Two lists of constructs that use one of these forms is given in the \textit{Auth
 %the command \texttt{{\char'134}thebibliography}.
 
 \bibliographystyle{abbrv}
-\bibliography{references}
+\bibliography{bibliography}
 
 \end{document}
