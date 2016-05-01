@@ -1,2 +1,22 @@
 \section{Evaluation}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\label{sec:evaluation}
+
+We evaluated the performance of our solution on a single node equipped with 4 cores and 8 GB of RAM. We considered a target dataset consisting of 55906573 events, distributed as follows: 15\% posts, 44\% comments, 39\% likes and 2\% friendships. 
+
+\begin{table}[h!]
+	\centering
+	\caption{Datasets}
+	\label{tab:datasets}
+	\begin{tabular}{l|c|c|}
+		\cline{2-3}
+		& percentage & events  \\ \hline
+		\multicolumn{1}{|c|}{tiny}		& 1\%	& 559567	\\ \hline
+		\multicolumn{1}{|c|}{xsmall}	& 10\%	& 5595659	\\ \hline
+		\multicolumn{1}{|c|}{small}		& 25\%	& 13976645	\\ \hline
+		\multicolumn{1}{|c|}{medium}	& 50\%	& 27953288	\\ \hline
+		\multicolumn{1}{|c|}{large}		& 75\%	& 41929932	\\ \hline
+		\multicolumn{1}{|c|}{target}	& 100\%	& 55906573	\\ \hline
+	\end{tabular}
+\end{table}
+
+During the experimentation phase, we considered the target dataset variants shown in Table \ref{tab:datasets}, which retain the original events distribution.

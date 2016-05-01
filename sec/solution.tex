@@ -1,4 +1,6 @@
 \section{Grand Challenge Solution}
+\label{sec:grand-challenge-solution}
+
 For the solution a number of data processing open source frameworks have been examined, including Apache Storm and Apache Spark Streaming.
 
 Eventually, our choice fell on Flink, an Apache Foundation top project which implements a lambda architecture. The architecture of our solution exploits some of the Flink peculiar features, the most relevant being the possibility to have a feedback towards upstream operators. This characteristic can be very useful in optimizing stateful nodes using data from downstream operators. 
