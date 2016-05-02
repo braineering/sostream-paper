@@ -1,0 +1,23 @@
+\section{Future Works}
+\label{sec:future-works}
+
+\begin{enumerate}
+	\item Store the fields of tuples not directly involved in the ranking calculation, and retrieve them only when necessary in the output of a new ranking.
+	
+	\item Increase the parallelization degree of the operations within the same operator.
+	
+	\item Minimize the back-pressure induced by the feedback stream, by dynamic buffer sizes according to a EWMA-like discipline.
+	
+	\item Refine the ranking operator's filter, so that it can ignore the tuples that may not induce a ranking update.
+	
+	\item Explore new heuristic approaches to the problem of determining the maximum size of a clique.
+	
+	\item Increase the throughput of the graph management by the use of bulk operations (Redis is bad for many little operations \cite{ZhangTudorChenOoi2014}).
+	
+	\item Evaluate the performance of our solution in a distributed system.
+	
+	\item Explore scope for improvement using data structures specifically optimized for heavy memory computation, such as FastUtils\cite{FastUtil} and WebGraph\cite{WebGraph}.
+	
+\end{enumerate}
+
+

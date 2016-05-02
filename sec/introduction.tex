@@ -1,8 +1,11 @@
 \section{Introduction}
 \label{sec:introduction}
 
-The DEBS 2016 Grand Challenge \cite{JerzakZiekow2014} focues on ... metodologia, contributi, organizzazione paper.
+The social network analysis (SNA) is a discipline that for years conveys the interest of the scientific community and industry. 
+The identification of the components in a social graph that mostly stimulate the interaction between network nodes, is an activity that is gaining more and more strategic value within data-driven business models. 
+The introduction of new computational paradigms and activating technologies has enabled the spread of this analysis in the everyday life: from the rankings proposed by the most common social networks, to the most cutting-edge scientific applications. 
+The extraction of informational value from a social graph must often deal with algorithms, whose complexity requires the use of heuristics and a high degree of computational distribution.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The purpose of our work is to meet the Grand Challenge's requirements with an efficient, easily extendable measurable and tunable solution, which can run on a single node, but whose architecture is designed to be executed in a distributed environment. Willing to model the solution as a data stream processing application, we wanted to specifically experience the Flink framework \cite{Flink}, as it is highly innovative and relatively new on the $\lambda$-architecture landscape.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The rest of the paper is organized as follow. In Section \ref{sec:solution} we show the general architecture of our solution and the topology of the operators for the first and second query. In this section we also come into the design details of the system's core components. In Section \ref{sec:evaluation} we show the results obtained from experiments conducted on datasets which are variations of the one proposed in the challenge, that preserve the original event distribution. In Section \ref{sec:future-works} we anticipate future improvements planned for our solution, with a view to its implementation in a distributed environment.

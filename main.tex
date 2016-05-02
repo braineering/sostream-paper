@@ -1,4 +1,6 @@
-% Title: Grand Challenge: Real-time Analysis of Social Networks Leveraging the Flink Framework
+%********************************************************************************
+% Title: Grand Challenge: Real-time Analysis of Social Networks 
+%		 Leveraging the Flink Framework
 %
 % Conference: ACM DEBS 2016
 %
@@ -8,56 +10,23 @@
 %		   Matteo Nardelli <nardelli@ing.uniroma2.it>,
 %		   Valeria Cardellini <cardellini@ing.uniroma2.it>
 %
-% Institution: Department of Civil Engineering and Computer Science Engineering, University of Rome Tor Vergata, Italy
+% Institution: Department of Civil Engineering and Computer Science Engineering, 
+% 			   University of Rome Tor Vergata, Italy
 %
 % Style: SIG Proceedings Alternate VERSION 2.8
-
-% You can indicate italicized words or phrases in your text with the command \texttt{{\char'134}textit}; emboldening with the command \texttt{{\char'134}textbf} and typewriter-style (for instance, for computer code) with \texttt{{\char'134}texttt}.
+%********************************************************************************
 
 \documentclass{sig-alternate-05-2015}
 
-\usepackage{url}
 \usepackage{graphicx}
 \usepackage{epstopdf}
-\usepackage[]{subfig}
+\usepackage{subfig}
 \usepackage{bm}
-\usepackage{pgfplots}
+\usepackage{url}
 
-\newcommand{\samplePlot}[1]{
-	\begin{figure}
-		\centering
-		\begin{tikzpicture}
-		\begin{axis}[
-		title={#1}, 
-		grid=major, 
-		width=0.8\columnwidth,
-		xlabel={$inputsize$},
-		ylabel={$seconds$}]
-		
-		\addplot coordinates {
-			(0.01,10) (0.10,20)  (0.25,40)
-			(0.5,80)  (0.75,160) (1.0,320)
-		};
-		
-		\addplot coordinates {
-			(0.01,5) (0.10,10)  (0.25,20)
-			(0.5,40)  (0.75,80) (1.0,160)
-		};
-		
-		\addplot coordinates {
-			(0.01,1) (0.10,2)  (0.25,4)
-			(0.5,8)  (0.75,16) (1.0,32)
-		};
-		
-		\legend{$baseline$,$enhanced1$,$enhanced2$}
-		
-		\end{axis}
-		\end{tikzpicture}
-	\end{figure}
-}
-
-
-% CUSTOM RULES
+%****************************************
+% Custom Rules
+%****************************************
 
 \def\sharedaffiliation{%
 \end{tabular}
@@ -65,34 +34,30 @@
 
 \newfont{\eaddfntresz}{phvr8t at 11pt}
 
-\hyphenation{sched-uler par-a-digm adopt-ed}
+\hyphenation{sched-uler par-a-digm adopt-ed evolv-ing th}
 
 \begin{document}
+	
+%****************************************
+% Paper ACM Details
+%****************************************
 
-% COPYRIGHT
-\setcopyright{acmcopyright}
-
-% ISBN
-%\isbn{123-4567-24-567/08/06}
-
-% DOI
-%\doi{10.475/123_4}
-
-% CONFERENCE
 \conferenceinfo{DEBS 2016}{June 20--24, 2016, Irvine, CA, USA}
-
-% PRICE
+\setcopyright{acmcopyright}
 \acmPrice{\$15.00}
 
-% AUTHOR METADATA
+%\isbn{123-4567-24-567/08/06}
+%\doi{10.475/123_4}
 %\conferenceinfo{DEBS 2016}{June 20--24, 2016, Irvine, CA, USA}
 %\CopyrightYear{2016} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 
-% TITLE
+%****************************************
+% Title and Authors
+%****************************************
+
 \title{Grand Challenge: Real-time Analysis of Social Networks \\ Leveraging the Flink Framework}
 
-% AUTHORS
 \numberofauthors{5}
 \author{
 \alignauthor
@@ -118,38 +83,27 @@
 
 \maketitle
 
-% ABSTRACT
+%****************************************
+% Content
+%****************************************
+
 \input{sec/abstract}
-
-% CATEGORIES
-\input{ccs-keywords}
-
-\printccsdesc
-
-% KEYWORDS
-%\keywords{ACM proceedings; Complex Event Processing; Event Stream Processing; Apache Storm; Amazon Web Services}
-
-% INTRODUCTION
+\input{sec/ccs-keywords}
 \input{sec/introduction}
-
-% SOLUTION
 \input{sec/solution}
 \input{sec/solution-query-1}
 \input{sec/solution-query-2}
-
-% EVALUATION
 \input{sec/evaluation}
 \input{sec/evaluation-query-1}
 \input{sec/evaluation-query-2}
-
-% FURTHER IMPROVEMENTS
-\input{sec/further-improvements}
-
-% CONCLUSIONS
+\input{sec/future-works}
 \input{sec/conclusions}
 
-% REFERENCES
+%****************************************
+% Bibliography
+%****************************************
+
 \bibliographystyle{abbrv}
-\bibliography{bibliography}
+\bibliography{./ref/3Cores-sostream}
 
 \end{document}

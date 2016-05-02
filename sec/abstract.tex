@@ -8,6 +8,6 @@ Our solution to the first query relies on a distributed and fine-grain approach 
 
 The second query efficiently represents in-memory the evolving social graph and uses a customized Bron-Kerbosch algorithm to identify the largest communities active on a topic. We leverage on an in-memory caching system to keep the largest connected components which have been previously identified by the algorithm, thus saving computational time.
 
-We run the experiments on a single node equipped with 4 cores and 8 GB of RAM. For a medium dataset size with 200k events, our system can process up to 2.5(?) kEvents/s with an average latency of 0.4(?) ms for the first query, and up to 2.8(?) kEvents/s with an average latency of 0.5(?) ms for the second query. 
+We run the experiments on a single node equipped with 4 cores, 8 GB of RAM and SSD with 900 IOPS. For a medium dataset size with 200k events, our system can process up to 2.5(?) kEvents/s with an average latency of 0.4(?) ms for the first query, and up to 2.8(?) kEvents/s with an average latency of 0.5(?) ms for the second query. 
 		
 \end{abstract}

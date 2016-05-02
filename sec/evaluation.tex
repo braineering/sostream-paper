@@ -1,22 +1,24 @@
 \section{Evaluation}
 \label{sec:evaluation}
 
-We evaluated the performance of our solution on a single node equipped with 4 cores and 8 GB of RAM. We considered a target dataset consisting of 55906573 events, distributed as follows: 15\% posts, 44\% comments, 39\% likes and 2\% friendships. 
+We evaluated the performance of our solution on a single Amazon EC2 instance running Debian 8.3 (Jessie), equipped with an Intel Xeon E5-2666 Haswell (2.6GHz, 4 cores and 25MB cache), 8 GB of RAM and SSD with 900 IOPS \cite{AWSEC2InstanceTypes}. 
+Our solution is implemented in Java1.8 and relies on Apache Flink 1.0.0 \cite{Flink} and Redis 3.0.7 \cite{Redis}.
 
-\begin{table}[h!]
-	\centering
-	\caption{Datasets}
-	\label{tab:datasets}
-	\begin{tabular}{l|c|c|}
-		\cline{2-3}
-		& percentage & events  \\ \hline
-		\multicolumn{1}{|c|}{tiny}		& 1\%	& 559567	\\ \hline
-		\multicolumn{1}{|c|}{xsmall}	& 10\%	& 5595659	\\ \hline
-		\multicolumn{1}{|c|}{small}		& 25\%	& 13976645	\\ \hline
-		\multicolumn{1}{|c|}{medium}	& 50\%	& 27953288	\\ \hline
-		\multicolumn{1}{|c|}{large}		& 75\%	& 41929932	\\ \hline
-		\multicolumn{1}{|c|}{target}	& 100\%	& 55906573	\\ \hline
-	\end{tabular}
-\end{table}
+The experimental analysis aims to study (i) the overall latency, (ii) the average per tuple latency and (iii) the latency distribution on crucial operators. The times were measured using the analysis tools provided by the Flink framework.
 
-During the experimentation phase, we considered the target dataset variants shown in Table \ref{tab:datasets}, which retain the original events distribution.
+Our solution aims to properly process the dataset proposed by the Grand Challenge in a timely-fashion. This dataset presents 55906573 events, distributed as follows:  44\% comments, 39\% likes, 15\% posts and 2\% friendships.
+
+In the experimental phase, we considered portions of that dataset, preserving the original event distribution. In particular, we consider portions ranging from 0.1\% (55905 events) to 10\% (5590550 events) of the original dataset.
+
+The experimental results show that:
+
+\begin{enumerate}
+	\item Workload balanced on operators: this makes our solution not affected by back-pressure in any portion of the stream and at no stage of computation.
+	Workload balanced on cores.
+	
+	\item Physical memory is never close to saturation, thus avoiding overheads eventually caused by garbage collection and memory swapping.
+	
+	\item Presence of exponential complexity components.
+	
+	\item Heavy latency component due to the use of Redis in single node architecture.
+\end{enumerate}
