@@ -6,6 +6,14 @@ Our solution is implemented in Java1.8 and relies on Apache Flink 1.0.0 \cite{Fl
 
 The experimental analysis aims to study (i) the overall latency, (ii) the average per tuple latency and (iii) the latency distribution on crucial operators. The times were measured using the analysis tools provided by the Flink framework.
 
+Hereafter for the distribution of latency, we consider the topologies partitioned into the following meta-operators: 
+
+\begin{enumerate}
+	\item src/snk: it encapsulates both source and sink. We consider it because of the natural overhead introduced by the I/O operations;
+	\item updater: it encapsulates all the logic involved in the score computation. We consider it because it has to deal with the most memory-intensive data structures (in Query 1) and with the NP-hardness (in Query 2).
+	\item ranker: it encapsulates all the logic involved in the items ranking and filtering. We consider it because it has to deal with the selection complexity.
+\end{enumerate}
+
 Our solution aims to properly process the dataset proposed by the Grand Challenge in a timely-fashion. This dataset presents 55906573 events, distributed as follows:  44\% comments, 39\% likes, 15\% posts and 2\% friendships.
 
 In the experimental phase, we considered portions of that dataset, preserving the original event distribution. In particular, we consider portions ranging from 0.1\% (55905 events) to 10\% (5590550 events) of the original dataset.

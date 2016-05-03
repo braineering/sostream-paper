@@ -1,13 +1,15 @@
 \subsection{Query 1: Architecture}
 \label{sec:solution-q1}
 
-The implementation is represented in the topology shown in Figure \ref{fig:q1-architecture}.
+The goal of the first query is to determine the updates of the top-3 most influential posts in the social network, that is, those that maintain high over time the rate of interaction via comments. The score of a post is provided equally by both direct and indirect comments, that is, those that reply to a direct comment. The passage of simulated time decreases the score contribution provided by comments.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The design of the topology for the first query is shown in Figure \ref{fig:q1-architecture}.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The \textit{Event Dispatcher} is a centralized operator that reads in parallel both posts and comments data source. It converts each entry in a tuple containing the fields that are strictly necessary to the following computations. Taking advantage of the ascending events timestamp, it can efficiently carry out the interlacing of events. The \textit{Comment Mapper} is a centralized operator that maintains the mapping between direct/indirect comments to posts. This operator is particularly sensitive, because its state can potentially saturate the memory. Therefore, this operator should ideally keep track of the only active post mapping. 
+The \textit{Post Score Updater} is a parallel operator that produces 
+the differential in terms of score and commentators. In particular, the calculation of the score differential is performed by summing the number of expirations within a circular buffer. The synchronization of each parallell operator is achieved (1) by letting time flow with the processing of the events of which it is responsible for, and (2) by broadcasting the timestamp of the events of which it is not. The \textit{Aggregator} is a parallel rolling counting operator that merges the score updates, thus producing the total score for the post which it is responsible for. The \textit{Feedback Stream} is a branch through which the Aggregator sends to the Comment Mapper buckets of espired posts's id, in order to free memory from unnecessary mappings.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The \textit{Post Ranker} is a parallel operator that defines the best-3 partial ranking of posts which it is responsible for. The \textit{Post Rank Merger} is a parallel operator that finally merges the partial best-3 rankings into a total top-3 one. Since these operators sort a collection of posts, optimization  consists of: (1) reduce the sorting size by parallelization of operators, and elimination of expired posts by making the the score updates themselves to wipe out the expired posts; (2) reduce the number of sorting executions to cases where this could actually produce a ranking update. Downstream of this operator, stands the \textit{Post Rank Filter}, that is the centralized operator used to filter out the equivalent rankings.
 
 \begin{figure*}[]
 	\centering
@@ -15,7 +17,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 	\caption{The topology of operators for Query 1.}
 	\label{fig:q1-architecture}
 \end{figure*}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
