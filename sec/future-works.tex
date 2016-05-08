@@ -1,25 +1,16 @@
 \section{Future Works}
 \label{sec:future-works}
 
-\begin{enumerate}
-	\item Store the fields of tuples not directly involved in the ranking calculation, and retrieve them only when necessary in the output of a new ranking.
-	
-	\item Increase the parallelization degree of the operations within the same operator.
-	
-	\item Minimize the back-pressure induced by the feedback stream, by dynamic buffer sizes according to a EWMA-like discipline.
-	
-	\item Refine the ranking operator's filter, so that it can ignore the tuples that may not induce a ranking update.
-	
-	\item Explore new heuristic approaches to the problem of determining the maximum size of a clique.
-	
-	\item Increase the throughput of the graph management by the use of bulk operations (Redis is bad for many little operations \cite{ZhangTudorChenOoi2014}).
-	
-	\item Let Post Ranker emit a ranking only when it is updated with respect to the last issued.
-	
-	\item Evaluate the performance of our solution in a distributed system.
-	
-	\item Explore scope for improvement using data structures specifically optimized for heavy memory computation, such as FastUtils\cite{FastUtil} and WebGraph\cite{WebGraph}.
-	
-\end{enumerate}
+%\hlr{non so se convenga usare il will oppure could (quindi chiamare la sezione Further Improvements?) perch\'e possono essere delle migliorie che identifichiamo ma, non avendo al momento un interesse diretto nell'analitica su grafi, non sappiamo se voler implementare.}
+
+Leveraging the experience gathered to answer the DEBS grand challenge, we identify the following improvements. 
+%
+%We will extreme the inner parallelization of the operators and reduce the complexity of clique calculation, by adopting special purpose heuristics. 
+We will exploit a finer-grained parallelism by enhancing the application components with more sophisticated data structures and operations, which enable concurrent and efficient updates.
+%
+%To further reduce the average application latency, we will store tuple's fields not regularly involved in the ranking calculation and retrieve them downstream only when necessary in the emission of a new ranking (i.e. post author's name) or in not too frequent comparisons (i.e comment's content). 
+To further reduce the average application latency, we will decouple the social events (e.g., post, comment, like) from their content (e.g., post message), so to reduce the streams transmission time.
+%
+Finally, we could make the feedback stream self-adaptive, so to properly handle the  backpressure mechanism, even when posts expire with an unpredictable rate.
 
 
