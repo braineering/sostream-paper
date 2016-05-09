@@ -12,7 +12,7 @@ We run the experiments on a single node equipped with 4 cores and 8 GB of RAM. F
 
 
 ## Authors
-Giacomo Marciani [giacomo.marciani@gmail.com](mailto:giacomo.marciani@gmail.com)
+Giacomo Marciani [giacomo.marciani@acm.org](mailto:giacomo.marciani@acm.org)
 
 Marco Piu [pyumarco@gmail.com](mailto:pyumarco@gmail.com)
 
